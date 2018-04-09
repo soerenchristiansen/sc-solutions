@@ -3,7 +3,7 @@ const path = require('path');
 const PORT = process.env.PORT || 5000;
 
 express()
-  .use(express.static(path.join(__dirname, 'images')))
+  .use(express.static(path.join(__dirname, 'public')))
   .engine('html', require('ejs').renderFile)
   .set('views', path.join(__dirname, 'app'))
   .set('view engine', 'html')
