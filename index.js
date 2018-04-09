@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 5000;
 
 express()
   .use(express.static(path.join(__dirname, 'images')))
-  // .engine('html', cons.swig)
+  .engine('html', require('ejs').renderFile)
   .set('views', path.join(__dirname, 'app'))
   .set('view engine', 'html')
   .get('/', (req, res) => res.render('index'))
